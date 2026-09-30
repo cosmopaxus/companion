@@ -2,8 +2,8 @@
 // Navigations go to the network first (so a new version shows up on the next open) and fall back to
 // the cached shell when offline. Hashed bundles and icons are served cache-first.
 // The build id and precache list below are filled in by scripts/postbuild-web.mjs.
-const CACHE = 'companion-munhocqr';
-const PRECACHE = ["./","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./app/static/js/web/index-e862cd5730918625df99430917566a11.js"];
+const CACHE = 'companion-munl29m4';
+const PRECACHE = ["./","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./app/static/js/web/index-a8248dc3f6393e03e54a659cf6693515.js"];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
