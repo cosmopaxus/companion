@@ -28,12 +28,23 @@
     <div id="root"><p class="boot">Opening Companion…</p></div>
     <script>
       // Offline support: a small service worker keeps the app shell available after the first visit.
+      // When a newer version takes over while the app is open, tell the app so it can offer a refresh.
       if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
         window.addEventListener('load', function () {
-          navigator.serviceWorker.register('./sw.js').catch(function () {});
+          var hadController = !!navigator.serviceWorker.controller;
+          navigator.serviceWorker.addEventListener('controllerchange', function () {
+            if (!hadController) { hadController = true; return; } // first install, not an update
+            window.__companionUpdateReady = true;
+            window.dispatchEvent(new Event('companion-update-ready'));
+          });
+          navigator.serviceWorker.register('./sw.js').then(function (reg) {
+            var check = function () { reg.update().catch(function () {}); };
+            setInterval(check, 30 * 60 * 1000);
+            document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'visible') check(); });
+          }).catch(function () {});
         });
       }
     </script>
-  <script src="./app/static/js/web/index-2bb475583dcb9186b641adf4cf261cad.js" defer></script>
+  <script src="./app/static/js/web/index-09981edf2cc6f6b0f16b8b6f3b05a04f.js" defer></script>
 </body>
 </html>
