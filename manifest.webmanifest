@@ -1,6 +1,6 @@
 {
-  "name": "Companion",
-  "short_name": "Companion",
+  "name": "Equilibrium v3 · Graphics & Interface",
+  "short_name": "Equilibrium",
   "description": "A practice for becoming. Notice where you are, choose what matters, practice a direction, and see what changes.",
   "id": "./",
   "start_url": "./",
@@ -9,10 +9,29 @@
   "orientation": "portrait",
   "background_color": "#F7F0E5",
   "theme_color": "#F7F0E5",
-  "categories": ["health", "lifestyle", "productivity"],
+  "categories": [
+    "health",
+    "lifestyle",
+    "productivity"
+  ],
   "icons": [
-    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "./icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
   ]
 }

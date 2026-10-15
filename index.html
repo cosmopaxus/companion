@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Companion</title>
+    <title>Equilibrium v3 · Graphics & Interface</title>
     <meta name="description" content="A practice for becoming. Notice where you are, choose what matters, practice a direction, and see what changes." />
     <meta name="theme-color" content="#F7F0E5" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Companion" />
+    <meta name="apple-mobile-web-app-title" content="Equilibrium" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <style id="expo-reset">
       html, body { height: 100%; background: #F7F0E5; }
@@ -20,12 +20,29 @@
       #root { display: flex; height: 100%; flex: 1; }
       .boot { margin: auto; font: 16px/1.5 Georgia, "Iowan Old Style", serif; color: #625D53; }
     </style>
+    <script>
+      // Paint the right page color before the app loads, so Night never flashes white.
+      (function () {
+        var c = 'day';
+        try { c = localStorage.getItem('companion.v2.theme') || 'day'; } catch (e) {}
+        var dark = c === 'night' || (c === 'system' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
+        var bg = dark ? '#121915' : '#F7F0E5';
+        document.documentElement.style.background = bg;
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', dark ? 'night' : 'day');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', bg);
+        var st = document.createElement('style');
+        st.textContent = 'html, body { background: ' + bg + ' !important; } .boot { color: ' + (dark ? '#ADA796' : '#625D53') + ' !important; }';
+        document.head.appendChild(st);
+      })();
+    </script>
   <meta name="theme-color" content="#F7F0E5">
 <meta name="description" content="A practice for becoming. Notice where you are, choose what matters, practice a direction, and see what changes.">
 <link rel="icon" href="./favicon.ico"/></head>
   <body>
-    <noscript><p class="boot">Companion needs JavaScript to run.</p></noscript>
-    <div id="root"><p class="boot">Opening Companion…</p></div>
+    <noscript><p class="boot">Equilibrium needs JavaScript to run.</p></noscript>
+    <div id="root"><p class="boot">Opening Equilibrium…</p></div>
     <script>
       // Offline support: a small service worker keeps the app shell available after the first visit.
       // When a newer version takes over while the app is open, tell the app so it can offer a refresh.
@@ -45,6 +62,6 @@
         });
       }
     </script>
-  <script src="./app/static/js/web/index-09981edf2cc6f6b0f16b8b6f3b05a04f.js" defer></script>
+  <script src="./app/static/js/web/index-b2240244f74976868a1d348e5b32524a.js" defer></script>
 </body>
 </html>

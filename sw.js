@@ -1,9 +1,10 @@
-// Companion service worker: offline app shell.
+// Equilibrium service worker: offline app shell.
 // Navigations go to the network first (so a new version shows up on the next open) and fall back to
 // the cached shell when offline. Hashed bundles and icons are served cache-first.
 // The build id and precache list below are filled in by scripts/postbuild-web.mjs.
-const CACHE = 'companion-muowe8be';
-const PRECACHE = ["./","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./app/static/js/web/index-09981edf2cc6f6b0f16b8b6f3b05a04f.js"];
+// v2's caches are prefixed 'companion2-' so they never touch the first build's caches on a shared origin.
+const CACHE = 'companion2-mv8xxu0c';
+const PRECACHE = ["./","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./fonts/cinzel-700.woff2","./fonts/nunito-400.woff2","./fonts/nunito-600.woff2","./fonts/nunito-700.woff2","./app/static/js/web/index-b2240244f74976868a1d348e5b32524a.js"];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
@@ -11,7 +12,7 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => Promise.all(keys.filter((k) => k.startsWith('companion-') && k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim()),
+    caches.keys().then((keys) => Promise.all(keys.filter((k) => k.startsWith('companion2-') && k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim()),
   );
 });
 
@@ -39,7 +40,7 @@ self.addEventListener('fetch', (event) => {
       (hit) =>
         hit ||
         fetch(req).then((res) => {
-          if (res.ok && /\.(js|png|webmanifest|ico)$/.test(url.pathname)) {
+          if (res.ok && /\.(js|png|jpg|webmanifest|ico)$/.test(url.pathname)) {
             const copy = res.clone();
             caches.open(CACHE).then((c) => c.put(req, copy));
           }
