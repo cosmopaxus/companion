@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Equilibrium v3 · Graphics & Interface</title>
     <meta name="description" content="A practice for becoming. Notice where you are, choose what matters, practice a direction, and see what changes." />
-    <meta name="theme-color" content="#F7F0E5" />
+    <meta name="theme-color" content="#121915" />
     <meta name="color-scheme" content="light dark" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <!-- The first painting anyone sees (welcome and Home): start fetching it with the page. -->
@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-title" content="Equilibrium" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <style id="expo-reset">
-      html, body { height: 100%; background: #F7F0E5; }
+      html, body { height: 100%; background: #121915; }
       body { overflow: hidden; margin: 0; }
       #root { display: flex; height: 100%; flex: 1; }
       .boot { margin: auto; font: 16px/1.5 Georgia, "Iowan Old Style", serif; color: #625D53; }
@@ -25,8 +25,8 @@
     <script>
       // Paint the right page color before the app loads, so Night never flashes white.
       (function () {
-        var c = 'day';
-        try { c = localStorage.getItem('companion.v2.theme') || 'day'; } catch (e) {}
+        var c = 'night'; // Night is the default (Oct 15)
+        try { c = localStorage.getItem('companion.v2.theme') || 'night'; } catch (e) {}
         var dark = c === 'night' || (c === 'system' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
         var bg = dark ? '#121915' : '#F7F0E5';
         document.documentElement.style.background = bg;
@@ -64,6 +64,6 @@
         });
       }
     </script>
-  <script src="./app/static/js/web/index-f5c442187d84be6fa201ba276f5e36a7.js" defer></script>
+  <script src="./app/static/js/web/index-492ed4551c8157a489aa8ef191dc5a8b.js" defer></script>
 </body>
 </html>
