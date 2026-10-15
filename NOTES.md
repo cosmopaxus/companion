@@ -1,25 +1,22 @@
-# Equilibrium v4 · painted academy · piece 3: full-art screens (+ the Oct 14 decisions)
+# Equilibrium v4 · painted academy · piece 4: familiars and seals
 
-October 14, 2026 · branch `v3-painted-academy`, latest commit "Painted academy: check-in always in the Moon Pool; lessons offer 'Reflect in your Grimoire' (mockup 06)".
+October 14, 2026 · branch `v3-painted-academy`, commit c513080 "Painted academy piece 4: familiars and seals". The source zip now includes `.git`, so history carries forward (the piece-3 zip had none; this repo starts with a baseline commit of piece 3 round 2).
 
 ## Decisions (Oct 14, Cosmo)
-1. Home: academy painting with two chips, tier and hall.
-2. Glass wash: ~90% (Day) so text stays 4.5:1.
-3. Art: keep previews until the ChatGPT re-creations arrive, then swap (`python3 scripts/make-art.py <folder>`).
-4. Gems: in the app bar and as a chip on the art.
-5. Check-in: Home card → its own screen, always in the Moon Pool.
-6. Titles: Compass shows the reading word; Journal is "Today's page".
-7. Journal prompts: one sideways-scrolling row.
-8. Night: dim the paintings for now; add the darker Canva set as Night art later.
+1. The familiar follows the lesson: a lesson's familiar is its element's (Fire → Salamander, Air → Sylph, Water → Undine, Earth → Gnome). A lesson with no element uses the hall it's taught in.
+2. Each hall keeps its own familiar: the Gnome asks the Journal prompt in the Herb Garden.
+3. No "Choose your guide" screen (mockup 12) for now; no new setting or saved data.
 
-## Piece 3
-- Rest (Sanctuary): full-screen art, breath orb (4 in / 6 out), 2:00 countdown, Pause, Finish. Records nothing. Opened from Home and the map.
-- Path map: the walking path's seven lessons on the grounds painting's platforms, trail, you-are-here card, next path, Hall of Ascension, Sanctuary.
-- Invitation (Hall of Ascension): Enter = openTier('invited'); Stay = deferInvitation. Opened from the teacher's card and the map.
-- Lessons: "Reflect in your Grimoire".
+## Piece 4
+- Home guide card: "From your guide · <name>" with the familiar's portrait (52 px) in place of the path icon.
+- Lesson teaching card: the familiar (56 px) in place of the medallion. Mastered / locked / in preparation are still written on the page.
+- Journal: when a prompt is picked, the Gnome (44 px) sits beside it.
+- Seals: Home Compass row (32 px), Compass element bars (42 px), hall chips on the art (24 px), invitation (48 px).
+- Portraits bob 2 px over 4.2 s; reduced motion holds them still.
+- New files: `src/theme/familiars.ts`, `src/ui/academy/Familiars.tsx`, `familiarSources(.web).ts`, `public/art/familiars/`, `public/art/seals/`, `shots/painted5.spec.ts`.
 
 ## Rules
-Storage unchanged · 171 unit and 126 browser tests pass · typecheck and lint clean · iOS/Android export · contrast tested over every painting · reduced motion stops all ambient motion.
+Storage unchanged · 175 unit and 135 browser tests pass (3 skipped) · typecheck and lint clean · iOS/Android export · no text on the new art · reduced motion stops all ambient motion · no new library.
 
 ## Still different from the mockups
-Top app bar above the art · taller check-in · map inside the Journey page (not full screen) · guide and seal art (piece 4) · sample words.
+Preview-size art (170 px faces, painted backgrounds; cut-outs on the ChatGPT list) · no Choose-your-guide screen · mockups show Undine everywhere.
