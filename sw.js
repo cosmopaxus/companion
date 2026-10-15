@@ -3,8 +3,8 @@
 // the cached shell when offline. Hashed bundles and icons are served cache-first.
 // The build id and precache list below are filled in by scripts/postbuild-web.mjs.
 // v2's caches are prefixed 'companion2-' so they never touch the first build's caches on a shared origin.
-const CACHE = 'companion2-mv8xxu0c';
-const PRECACHE = ["./","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./fonts/cinzel-700.woff2","./fonts/nunito-400.woff2","./fonts/nunito-600.woff2","./fonts/nunito-700.woff2","./app/static/js/web/index-b2240244f74976868a1d348e5b32524a.js"];
+const CACHE = 'companion2-mv90mta7';
+const PRECACHE = ["./","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./fonts/cinzel-700.woff2","./fonts/nunito-400.woff2","./fonts/nunito-600.woff2","./fonts/nunito-700.woff2","./app/static/js/web/index-d81c80666ffa23e8b2b9fa7b9246de0b.js"];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
