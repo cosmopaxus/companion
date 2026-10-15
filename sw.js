@@ -3,8 +3,8 @@
 // the cached shell when offline. Hashed bundles and icons are served cache-first.
 // The build id and precache list below are filled in by scripts/postbuild-web.mjs.
 // v2's caches are prefixed 'companion2-' so they never touch the first build's caches on a shared origin.
-const CACHE = 'companion2-mv90mta7';
-const PRECACHE = ["./","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./fonts/cinzel-700.woff2","./fonts/nunito-400.woff2","./fonts/nunito-600.woff2","./fonts/nunito-700.woff2","./app/static/js/web/index-d81c80666ffa23e8b2b9fa7b9246de0b.js"];
+const CACHE = 'companion2-mv9qehix';
+const PRECACHE = ["./","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./fonts/cinzel-700.woff2","./fonts/nunito-400.woff2","./fonts/nunito-600.woff2","./fonts/nunito-700.woff2","./app/static/js/web/index-f5c442187d84be6fa201ba276f5e36a7.js","./art/academy-at-sunrise.jpg","./art/blur/academy-at-sunrise.jpg","./art/blur/hall-air-the-observatory.jpg","./art/blur/hall-earth-the-herb-garden.jpg","./art/blur/hall-fire-the-forge.jpg","./art/blur/hall-of-ascension.jpg","./art/blur/hall-water-the-moon-pool.jpg","./art/blur/healing-sanctuary.jpg","./art/blur/path-map-academy-grounds.jpg","./art/familiars/familiar-air-sylph-head.jpg","./art/familiars/familiar-earth-gnome-head.jpg","./art/familiars/familiar-fire-salamander-head.jpg","./art/familiars/familiar-water-undine-head.jpg","./art/hall-air-the-observatory.jpg","./art/hall-earth-the-herb-garden.jpg","./art/hall-fire-the-forge.jpg","./art/hall-of-ascension.jpg","./art/hall-water-the-moon-pool.jpg","./art/healing-sanctuary.jpg","./art/path-map-academy-grounds.jpg","./art/seals/seal-air.jpg","./art/seals/seal-earth.jpg","./art/seals/seal-fire.jpg","./art/seals/seal-water.jpg"];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
@@ -40,7 +40,7 @@ self.addEventListener('fetch', (event) => {
       (hit) =>
         hit ||
         fetch(req).then((res) => {
-          if (res.ok && /\.(js|png|jpg|webmanifest|ico)$/.test(url.pathname)) {
+          if (res.ok && /\.(js|png|jpg|webp|woff2|mp3|m4a|webmanifest|ico)$/.test(url.pathname)) {
             const copy = res.clone();
             caches.open(CACHE).then((c) => c.put(req, copy));
           }
