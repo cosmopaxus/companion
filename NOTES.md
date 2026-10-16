@@ -1,22 +1,15 @@
-# Equilibrium v4 · painted academy · piece 4: familiars and seals
+# Equilibrium · Schools of study · Release 2 (Oct 16, 2026)
 
-October 14, 2026 · branch `v3-painted-academy`, commit c513080 "Painted academy piece 4: familiars and seals". The source zip now includes `.git`, so history carries forward (the piece-3 zip had none; this repo starts with a baseline commit of piece 3 round 2).
+Pieces B–E on top of Piece A (published Oct 15). Source: branch `schools-of-study`, commit `fa87c5b`.
 
-## Decisions (Oct 14, Cosmo)
-1. The familiar follows the lesson: a lesson's familiar is its element's (Fire → Salamander, Air → Sylph, Water → Undine, Earth → Gnome). A lesson with no element uses the hall it's taught in.
-2. Each hall keeps its own familiar: the Gnome asks the Journal prompt in the Herb Garden.
-3. No "Choose your guide" screen (mockup 12) for now; no new setting or saved data.
+**Tap Refresh on every device after this publish**, so every device runs the same version before it syncs.
 
-## Piece 4
-- Home guide card: "From your guide · <name>" with the familiar's portrait (52 px) in place of the path icon.
-- Lesson teaching card: the familiar (56 px) in place of the medallion. Mastered / locked / in preparation are still written on the page.
-- Journal: when a prompt is picked, the Gnome (44 px) sits beside it.
-- Seals: Home Compass row (32 px), Compass element bars (42 px), hall chips on the art (24 px), invitation (48 px).
-- Portraits bob 2 px over 4.2 s; reduced motion holds them still.
-- New files: `src/theme/familiars.ts`, `src/ui/academy/Familiars.tsx`, `familiarSources(.web).ts`, `public/art/familiars/`, `public/art/seals/`, `shots/painted5.spec.ts`.
+- **Schools of study:** Contemplative and Hermetic, Levels I–II, beside the main path. Up to two at a time; rank is the ceiling; each school's master invites you to the next level; a 10-day trial lets you skip ahead by practice.
+- **Doors** on the path map, in the region where each level was taken.
+- **Soul mirror** as a tool in the inventory (Tools tab), opened by the bright mirror in Hermetic I.
+- **Teaching cards**, gentle movement lessons, and a balance nudge from the familiars.
+- **Each school in its own voice:** Hermetic follows Bardon's discipline with no care lines; Contemplative keeps its warm voice.
+- **Main path:** Acolyte is 6 lessons; the old mirror lessons and their mastery are kept. The one-line seeker is replaced by a 10-day trial.
+- Under-18 members can't open adults-only levels.
 
-## Rules
-Storage unchanged · 175 unit and 135 browser tests pass (3 skipped) · typecheck and lint clean · iOS/Android export · no text on the new art · reduced motion stops all ambient motion · no new library.
-
-## Still different from the mockups
-Preview-size art (170 px faces, painted backgrounds; cut-outs on the ChatGPT list) · no Choose-your-guide screen · mockups show Undine everywhere.
+Tests: 250 unit and 158 browser tests pass (2 sandbox-only account tests fail, as before).
