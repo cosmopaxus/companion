@@ -1,15 +1,15 @@
-# Equilibrium · Schools of study · Release 2 (Oct 16, 2026)
+# Equilibrium · Journey is a world · Release 3 (Oct 17, 2026)
 
-Pieces B–E on top of Piece A (published Oct 15). Source: branch `schools-of-study`, commit `fa87c5b`.
+Journey world Pieces 1–4 on top of Release 2 (Schools of study). Source: branch `journey-world`, commit `eb762f6`. Build stamp `mvcngkov`.
 
 **Tap Refresh on every device after this publish**, so every device runs the same version before it syncs.
 
-- **Schools of study:** Contemplative and Hermetic, Levels I–II, beside the main path. Up to two at a time; rank is the ceiling; each school's master invites you to the next level; a 10-day trial lets you skip ahead by practice.
-- **Doors** on the path map, in the region where each level was taken.
-- **Soul mirror** as a tool in the inventory (Tools tab), opened by the bright mirror in Hermetic I.
-- **Teaching cards**, gentle movement lessons, and a balance nudge from the familiars.
-- **Each school in its own voice:** Hermetic follows Bardon's discipline with no care lines; Contemplative keeps its warm voice.
-- **Main path:** Acolyte is 6 lessons; the old mirror lessons and their mastery are kept. The one-line seeker is replaced by a 10-day trial.
-- Under-18 members can't open adults-only levels.
+- **Journey is a world:** a World / Character switch at the top of Journey.
+- **World map:** the Academy grounds ("You are here"), the Hall of Ascension, the Sanctuary, a place for each school, and the Misty lands where schools still being written wait. Every place says its name and what's true now.
+- **Places open their own windows:** on phones a panel rises over the map; on a computer it opens beside it. Back, Close and Escape close it.
+- **Schools:** levels are tabs, one level at a time, each with its state in words. Every way into a school (Home, the catalog, a lesson, a door on the path map) opens its window on the World.
+- **The teacher's invitation to a first school:** after the first lesson, someone without a school is invited to Contemplative. Begin joins Level I; Not yet rests it for 7 days. Nothing opens by itself.
+- **Character sheet:** rank and the three keys to the next rank, elements, classes, stats, badges (the Bag one tap in), goals and areas.
+- No data changes: still `companion.v2`, schema 3.
 
-Tests: 250 unit and 158 browser tests pass (2 sandbox-only account tests fail, as before).
+Tests: 258 unit and 179 browser tests pass (2 sandbox-only account tests fail, as before).
