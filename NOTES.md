@@ -1,15 +1,11 @@
-# Equilibrium · Journey is a world · Release 3 (Oct 17, 2026)
+# Equilibrium · Release 3.1 (Oct 17, 2026)
 
-Journey world Pieces 1–4 on top of Release 2 (Schools of study). Source: branch `journey-world`, commit `eb762f6`. Build stamp `mvcngkov`.
+A fix on top of Release 3 (Journey is a world). Source: branch `journey-world`, commit `d6c95ee`. Build stamp `mvd90tmc`.
 
-**Tap Refresh on every device after this publish**, so every device runs the same version before it syncs.
+**Tap Refresh on every device after this publish.** On a computer with the app installed, Chrome will ask once to approve the new name "Equilibrium": tap **Update** that time.
 
-- **Journey is a world:** a World / Character switch at the top of Journey.
-- **World map:** the Academy grounds ("You are here"), the Hall of Ascension, the Sanctuary, a place for each school, and the Misty lands where schools still being written wait. Every place says its name and what's true now.
-- **Places open their own windows:** on phones a panel rises over the map; on a computer it opens beside it. Back, Close and Escape close it.
-- **Schools:** levels are tabs, one level at a time, each with its state in words. Every way into a school (Home, the catalog, a lesson, a door on the path map) opens its window on the World.
-- **The teacher's invitation to a first school:** after the first lesson, someone without a school is invited to Contemplative. Begin joins Level I; Not yet rests it for 7 days. Nothing opens by itself.
-- **Character sheet:** rank and the three keys to the next rank, elements, classes, stats, badges (the Bag one tap in), goals and areas.
-- No data changes: still `companion.v2`, schema 3.
-
-Tests: 258 unit and 179 browser tests pass (2 sandbox-only account tests fail, as before).
+- **Why:** Chrome offered to rename the installed app "Companion". A device that once ran the first build (Sep 2026, "Companion") still had that build's offline storage (`companion-…`). The app searched every storage box, oldest first, so it read the old "Companion" name card, and offline it could have opened the old app.
+- **Fixed:** the app reads only its own current storage, and it deletes its older storage (`companion-…` and older `companion2-…`) on every device it opens on. Other apps on the same address (the lab's `companionlab-…`) are never touched.
+- **Fresh copies:** a new version stores fresh files instead of copies the browser kept from before.
+- **Name:** the app installs and titles itself as just "Equilibrium" (was the v3 build label "Equilibrium v3 · Graphics & Interface").
+- No data changes: still `companion.v2`, schema 3. Your practice data is not in the storage that gets cleared.
