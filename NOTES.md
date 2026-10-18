@@ -1,12 +1,14 @@
-# Equilibrium · Release 3.3 · Your first steps count (Oct 18, 2026)
+# Equilibrium · Release 3.4 · Nothing you type gets lost (Oct 18, 2026)
 
-Practice saves Piece A on top of Release 3.2 (guided Compass). Source: branch `practice-saves`, commit `3d5c574`. Build stamp `mve1ubbu`.
+Practice saves Piece B on top of Release 3.3. Source: branch `practice-saves`, commit `ba408a8`. Build stamp `mve3vjxs`.
 
 **Tap Refresh on every device after this publish**, so every device runs the same version before it syncs.
 
-- **The first-steps tutorial saves for real:** the Home lesson's check-in goes on Home (+2 gems, a practice day, First light), the Journey lesson's intention and evidence go into Journey (+1 gem; pick an intention or write your own), the Journal lesson's reflection goes into the journal (+1 gem). Connect and You stay demos. The 5-gem thank-you is still given once.
-- **Earlier tutorial practice is added once, automatically:** dated to the day each lesson was done, in Personal, never twice, never after a delete.
-- Wording everywhere says what's true ("Everything you do here is saved and counts").
-- No data changes: still `companion.v2`, schema 3.
+- **Drafts kept on the device** until saved (or canceled on purpose): a lesson's note, first-time setup (comes back to the same step), the goal sheet (new goal, edits, the "what did it take" line), the area editor, a soul-mirror trait, and a trial's "what draws you". "Start over" / "Undo my changes" where it helps. Drafts waiting to be written are written when the app is closed or hidden.
+- **Today's lesson note can be edited** after marking it practiced.
+- **Teaching cards reopen on the card you left.**
+- **Home is tidier:** the path ("Foundation") and hall ("Herb Garden") pills are gone; the streak flame stays.
+- The guided Compass still keeps nothing until Save (as built in Release 3.2).
+- No data changes: still `companion.v2`, schema 3. Drafts use the existing drafts storage.
 
-Tests: 279 unit and 192 browser tests pass (2 sandbox-only account tests fail, as before).
+Tests: 279 unit; browser 198 pass on the full run, and the teaching, hall, drafts and schools specs (67) pass on the final build (2 sandbox-only account tests fail, as before).
