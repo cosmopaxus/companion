@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Equilibrium</title>
     <meta name="description" content="A practice for becoming. Notice where you are, choose what matters, practice a direction, and see what changes." />
-    <meta name="theme-color" content="#121915" />
+    <meta name="theme-color" content="#15122E" />
     <meta name="color-scheme" content="light dark" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <!-- The first painting anyone sees (welcome and Home): start fetching it with the page. -->
-    <link rel="preload" as="image" href="./art/academy-at-sunrise.jpg" fetchpriority="high" />
+    <!-- Logo piece (Oct 23, 2026): Strong+ favicons (16 · 32 · 48 and SVG), Strong for bigger icons. -->
+    <link rel="icon" href="./favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg" />
     <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
     <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -17,10 +19,15 @@
     <meta name="apple-mobile-web-app-title" content="Equilibrium" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <style id="expo-reset">
-      html, body { height: 100%; background: #121915; }
+      html, body { height: 100%; background: #12142B; }
       body { overflow: hidden; margin: 0; }
       #root { display: flex; height: 100%; flex: 1; }
-      .boot { margin: auto; font: 16px/1.5 Georgia, "Iowan Old Style", serif; color: #625D53; }
+      .boot { margin: auto; font: 16px/1.5 Georgia, "Iowan Old Style", serif; color: #A9A7B8; }
+      /* Logo piece (Oct 23, 2026): the splash, the still blueprint mark on night navy, until the app takes over
+         (src/ui/brand/Launch.tsx draws the launch animation in the same place and size). */
+      .splash { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #15122E; }
+      .splash svg { width: min(50vw, 30vh, 200px); height: min(50vw, 30vh, 200px); overflow: visible; }
+      .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     </style>
     <script>
       // Paint the right page color before the app loads, so Night never flashes white.
@@ -28,23 +35,24 @@
         var c = 'night'; // Night is the default (Oct 15)
         try { c = localStorage.getItem('companion.v2.theme') || 'night'; } catch (e) {}
         var dark = c === 'night' || (c === 'system' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
-        var bg = dark ? '#121915' : '#F7F0E5';
+        var bg = dark ? '#12142B' : '#F5F1E6'; // the flat look's Night and Day grounds (src/theme/palettes.ts)
         document.documentElement.style.background = bg;
         document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', dark ? 'night' : 'day');
         var m = document.querySelector('meta[name="theme-color"]');
         if (m) m.setAttribute('content', bg);
         var st = document.createElement('style');
-        st.textContent = 'html, body { background: ' + bg + ' !important; } .boot { color: ' + (dark ? '#ADA796' : '#625D53') + ' !important; }';
+        st.textContent = 'html, body { background: ' + bg + ' !important; } .boot { color: ' + (dark ? '#A9A7B8' : '#575670') + ' !important; }';
         document.head.appendChild(st);
       })();
     </script>
-  <meta name="theme-color" content="#F7F0E5">
+  <meta name="theme-color" content="#15122E">
 <meta name="description" content="A practice for becoming. Notice where you are, choose what matters, practice a direction, and see what changes.">
-<link rel="icon" href="./favicon.ico"/></head>
+  <meta name="equilibrium-build" content="mvm0jl1b">
+</head>
   <body>
     <noscript><p class="boot">Equilibrium needs JavaScript to run.</p></noscript>
-    <div id="root"><p class="boot">Opening Equilibrium…</p></div>
+    <div id="root"><div class="splash" role="img" aria-label="Opening Equilibrium…"><svg viewBox="-6 -6 212 212" aria-hidden="true"><defs><clipPath id="bk"><circle cx="100" cy="100" r="99.5"/></clipPath></defs><g fill="none" stroke="#C8A25A" stroke-width=".6" stroke-dasharray="2 2" stroke-opacity=".55"><circle cx="100" cy="100" r="94"/><g clip-path="url(#bk)"><line x1="100" y1="0" x2="100" y2="200"/><line x1="0" y1="100" x2="200" y2="100"/><circle cx="106.87" cy="125.65" r="88.56"/><circle cx="93.13" cy="74.35" r="88.56"/></g></g><g fill="none" stroke="#C8A25A" stroke-width=".6" stroke-opacity=".8"><circle cx="100" cy="100" r="80"/><circle cx="78.75" cy="105.7" r="22"/><circle cx="121.25" cy="94.3" r="22"/></g><g fill="#C8A25A" fill-opacity=".2" stroke="#C8A25A" stroke-width=".9" stroke-linejoin="round"><path d="M20.30 106.97 A80 80 0 0 1 172.50 66.19 A88.56 88.56 0 0 0 20.30 106.97 Z"/><path transform="rotate(180 100 100)" d="M20.30 106.97 A80 80 0 0 1 172.50 66.19 A88.56 88.56 0 0 0 20.30 106.97 Z"/><path d="M57.50 111.39 A22 22 0 0 1 100 100 A24.29 24.29 0 0 0 57.50 111.39 Z"/><path transform="rotate(180 100 100)" d="M57.50 111.39 A22 22 0 0 1 100 100 A24.29 24.29 0 0 0 57.50 111.39 Z"/></g><line x1="3.41" y1="125.88" x2="196.59" y2="74.12" stroke="#C8A25A" stroke-width="1.3" stroke-linecap="round"/><g fill="#C8A25A"><circle cx="100" cy="100" r="4"/><circle cx="100" cy="6" r="4"/><circle cx="194" cy="100" r="4"/><circle cx="100" cy="194" r="4"/><circle cx="6" cy="100" r="4"/></g></svg><span class="sr">Opening Equilibrium…</span></div></div>
     <script>
       // Offline support: a small service worker keeps the app shell available after the first visit.
       // When a newer version takes over while the app is open, tell the app so it can offer a refresh.
@@ -64,6 +72,6 @@
         });
       }
     </script>
-  <script src="./app/static/js/web/index-28f7a567774fc722498c285ce3ef23a4.js" defer></script>
+  <script src="./app/static/js/web/index-2f987b3e940ea45d6e9a230fa9160cf7.js" defer></script>
 </body>
 </html>
