@@ -1,3 +1,12 @@
+# Release 4.5 · alpha (includes 4.4) · 0-100 evening check-in, Compass Stress row, First steps for Simple, Then vs now at day 14, Beta feedback tab (Oct 26, 2026)
+
+- Source: branch `release-4.5` `e9d7c20` on `then-feedback` `b3b7090` (4.4) on `release-4.3.2` `1de92f0`. Build `mvptx029`. Same source as the lab `ae27166` (build `mvpppt3m`).
+- Cosmo's go (Oct 26, ~3:00 PM, after the Grok bot's re-check of `mvpppt3m`: no blockers): "publish this build to live as it is".
+- Live database: needs setup v1.5 (`supabase/schema.sql`, SHA-256 `9157a821…`) + Cosmo on `feedback.team` before this push (the feedback tab writes there).
+- Data: optional `fine`/`inner` on evening check-ins (0-10 fields stay the truth); draft key `evening100:<day>`; storage `companion.v2`, schema 4 unchanged. Research `app_version` 4.5.
+- Tests: unit lab 909/909, live 902 + 7 skipped; tsc clean; live browser (no database) 618 passed, 80 skipped, 6 known (p5:29 Mondays, settingsTrim:40 lab-only heading, updates:40 old note text; phone + desktop).
+- Rollback: `96f5a54` (4.3.2).
+
 # Release 4.3.2 · alpha · practice levels + the staff card's full cleared record (Oct 26, 2026)
 
 - Source: branch `release-4.3.2` `1de92f0` = `joining-open` `8165eb2` (4.3.1) + `practice-levels` `3ebfb63` + `staff-card-union` `44b7466`. Build `mvpfy8wr`.
