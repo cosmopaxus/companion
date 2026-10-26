@@ -1,3 +1,10 @@
+# Release 4.5.1 · alpha · no Stress card on the asleep Compass (Oct 26, 2026, ~4:45 PM PT)
+
+- Source: branch `release-4.5.1` `b273c63` = `release-4.5` `e9d7c20` + the fix. Build `mvpwf7b7`. Label still "4.5 · alpha" (no What's new card for this one).
+- Cosmo (4:32 PM): "it needs to be gone immediately". The asleep Compass (under 3 check-ins this week) showed a lone Stress card with no number and no elements. Removed. The awake page keeps Stress under the four elements until the Grok bot's Stress addendum (Cosmo: Stress never shows alone; its numbers belong in the deeper look).
+- Tests: unit lab 909/909, live 902 + 7 skipped; tsc clean; lint at baseline; live browser (no database) release45 + needle specs 28 passed, 2 skipped.
+- Rollback: `2096364` (4.5).
+
 # Release 4.5 · alpha (includes 4.4) · 0-100 evening check-in, Compass Stress row, First steps for Simple, Then vs now at day 14, Beta feedback tab (Oct 26, 2026)
 
 - Source: branch `release-4.5` `e9d7c20` on `then-feedback` `b3b7090` (4.4) on `release-4.3.2` `1de92f0`. Build `mvptx029`. Same source as the lab `ae27166` (build `mvpppt3m`).
