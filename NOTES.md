@@ -1,3 +1,11 @@
+# Release 4.3.2 · alpha · practice levels + the staff card's full cleared record (Oct 26, 2026)
+
+- Source: branch `release-4.3.2` `1de92f0` = `joining-open` `8165eb2` (4.3.1) + `practice-levels` `3ebfb63` + `staff-card-union` `44b7466`. Build `mvpfy8wr`.
+- Cosmo's go (Oct 26, 8:04 AM: lab, then the full push live; the What's new wording approved ~9:00 AM).
+- Members: the Other practices climb 3 → 5 → 10 minutes (teacher offers the next step after five days); staff cards list every question an earlier follow-up cleared, with dates. No data, storage-key or database change.
+- Tests: unit lab 865/865, live 858 + 7 skipped; lab browser 602 passed; live browser (no database) 581 passed, 72 skipped; known: settingsTrim:40 (lab-only heading), updates:40 (old note text), p5:29 (garden stage on a Monday).
+- Rollback: `8a37eba` (4.3.1).
+
 # Release 4.3.1 · alpha · Hall joining OPEN on live (Oct 25, 2026, ~10:50 PM PT)
 
 - Source: branch `joining-open` `8165eb2` = `staff-card` `1f2f1e2` (the 4.3.1 staff card) + `JOINING_OPEN` true on live. Build `mvouii1c`.
