@@ -1,3 +1,11 @@
+# Release 4.3.1 · alpha · Hall joining OPEN on live (Oct 25, 2026, ~10:50 PM PT)
+
+- Source: branch `joining-open` `8165eb2` = `staff-card` `1f2f1e2` (the 4.3.1 staff card) + `JOINING_OPEN` true on live. Build `mvouii1c`.
+- Cosmo's go (Oct 25, 10:06 PM "go for it", 10:20 PM "Yes, do 1-4").
+- Live database: staff = Cosmo (the Grok bot once it signs in to live); `heads_up_url` set; function `ministry-heads-up` deployed (Verify JWT off, GMAIL_USER + GMAIL_APP_PASSWORD; no label). Ping check: 200 {"sent":0}.
+- Tests: unit lab 849/849, live 842 + 7 skipped; full live browser suite 576 passed, 72 skipped, 2 known (settingsTrim:40 expects the lab-only heading).
+- Rollback: `a07afa0` (4.3, joining held).
+
 # Equilibrium · Release 4.3 · alpha (Oct 25, 2026)
 
 Hall of Spirit H5 (the four safe-use cards, Be Well's private member records and follow-ups; joining still held on live) + the Settings trim (tools on Progress, a shorter Settings) + Bug pass 7 (the Grok bot's B1–B15 + Q1, REVIEW_LIST #10–#13: tiles open a note of their kind, each step has its own page, the evening check-in is final once saved). Everyone signs up once more (the safe-use cards changed the forms); journals and saved data stay.
