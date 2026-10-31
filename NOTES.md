@@ -1,3 +1,11 @@
+# Release 4.6 · alpha · Reminders, Check in from the Compass, Stress in the deeper look (Oct 31, 2026, ~11:45 AM PT)
+
+- Source: branch `checkin-door-on-reminders` `e66f5be` = Reminders A + B `9038e53` + the Compass check-in button `0ef4974` + the Grok bot's next batch (#1 Journal heading, #2 Stress to Over time, #4 sliders from the middle, #8 Safety & Path card with Dosing tools off, #9 latest still-due reminder). Build `mvwqmkda`. Same source as the lab `c794848` (build `mvwnz1mc`).
+- Cosmo's go (Oct 31, 11:01 AM: "push live"), after the Grok bot's re-check of `mvwnz1mc`: 16 of 17 pass + 1 by design, 0 blockers.
+- Live database: no step. Research `app_version` stays 4.5. Data: optional `prefs.reminders` (Reminders); storage `companion.v2`, schema 4 unchanged.
+- Tests: unit lab 923/923, live 916 + 7 skipped; tsc clean; live browser (no database) 634 passed, 80 skipped, 14 failed = known (settingsTrim:40 lab-only heading, updates:40, v2:234/375/425) + reports:39 (a session planned "tomorrow" = Nov 1, off the October calendar) + release4:97 (a stale "4.5" in the spec; fixed in `e66f5be`, reran green).
+- Rollback: `d8ea014` (4.5.1).
+
 # Release 4.5.1 · alpha · no Stress card on the asleep Compass (Oct 26, 2026, ~4:45 PM PT)
 
 - Source: branch `release-4.5.1` `b273c63` = `release-4.5` `e9d7c20` + the fix. Build `mvpwf7b7`. Label still "4.5 · alpha" (no What's new card for this one).
