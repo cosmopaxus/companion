@@ -19,7 +19,7 @@
     <meta name="apple-mobile-web-app-title" content="Equilibrium" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <style id="expo-reset">
-      html, body { height: 100%; background: #12142B; }
+      html, body { height: 100%; background: #0E0B1F; }
       body { overflow: hidden; margin: 0; }
       #root { display: flex; height: 100%; flex: 1; }
       .boot { margin: auto; font: 16px/1.5 Georgia, "Iowan Old Style", serif; color: #A9A7B8; }
@@ -35,20 +35,20 @@
         var c = 'night'; // Night is the default (Oct 15)
         try { c = localStorage.getItem('companion.v2.theme') || 'night'; } catch (e) {}
         var dark = c === 'night' || (c === 'system' && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches);
-        var bg = dark ? '#12142B' : '#F5F1E6'; // the flat look's Night and Day grounds (src/theme/palettes.ts)
+        var bg = dark ? '#0E0B1F' : '#F6EEDC'; // Astral (Pass A, Oct 31): the sky and the paper (src/theme/palettes.ts astralNight / astralDay)
         document.documentElement.style.background = bg;
         document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', dark ? 'night' : 'day');
         var m = document.querySelector('meta[name="theme-color"]');
         if (m) m.setAttribute('content', bg);
         var st = document.createElement('style');
-        st.textContent = 'html, body { background: ' + bg + ' !important; } .boot { color: ' + (dark ? '#A9A7B8' : '#575670') + ' !important; }';
+        st.textContent = 'html, body { background: ' + bg + ' !important; } .boot { color: ' + (dark ? '#B9B1D2' : '#4F4D68') + ' !important; }';
         document.head.appendChild(st);
       })();
     </script>
   <meta name="theme-color" content="#15122E">
 <meta name="description" content="A practice for becoming. Notice where you are, choose what matters, practice a direction, and see what changes.">
-  <meta name="equilibrium-build" content="mvwx6t8p">
+  <meta name="equilibrium-build" content="mvx9e922">
 </head>
   <body>
     <noscript><p class="boot">Equilibrium needs JavaScript to run.</p></noscript>
@@ -72,6 +72,6 @@
         });
       }
     </script>
-  <script src="./app/static/js/web/index-a9c16d497570e5337870da9368c6bfcf.js" defer></script>
+  <script src="./app/static/js/web/index-5b1c1db0b6401cd182a1a7f3193ab018.js" defer></script>
 </body>
 </html>
