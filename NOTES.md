@@ -1,3 +1,12 @@
+# Release 4.8 · alpha · Simple first, birth month + year, room to write, why you're here (Nov 6, 2026, ~11:40 PM PT)
+
+- Source: branch `night-one` `3ddea95` = `release-4.7` `a639baf` + night one + `onboarding-why-heard` `06cc9d1` + the § 9 follow-up. Build `mw62jtta`. Same source as the lab `1b4bba2` (build `mw5xhnwp`).
+- Cosmo's go (Nov 6, 11:10 PM: "push live if it's safe"), after the Grok bot's re-check of `mw5xhnwp` (no blockers) and the 4.8 checkpoint.
+- Upgrade check before the push: a journey saved by the 4.7 code opens in 4.8 exactly as 4.7 reads it (no record dropped, same counts); real browser upgrade 4.7 site → 4.8 site on the same storage: history, Light and check-ins intact, Advanced choice kept but Simple shown; storage `companion.v2`, schema 4 unchanged.
+- Live database: no step. Data: optional `profile.birth`, `arrival` (incl. `asMinor`).
+- Tests: unit lab 999/999, live 992 + 10 skipped (run at a daytime clock; after ~4 PM PT a few seed-based specs fail on 4.7 too, a test-seed date issue). tsc clean. QA: phone + desktop, Night + Day, no page errors.
+- Rollback: branch `release-4.7-live` = `ddc3fbe` (4.7).
+
 # Release 4.6 · alpha · Reminders, Check in from the Compass, Stress in the deeper look (Oct 31, 2026, ~11:45 AM PT)
 
 - Source: branch `checkin-door-on-reminders` `e66f5be` = Reminders A + B `9038e53` + the Compass check-in button `0ef4974` + the Grok bot's next batch (#1 Journal heading, #2 Stress to Over time, #4 sliders from the middle, #8 Safety & Path card with Dosing tools off, #9 latest still-due reminder). Build `mvwqmkda`. Same source as the lab `c794848` (build `mvwnz1mc`).
