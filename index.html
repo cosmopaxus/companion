@@ -48,7 +48,7 @@
     </script>
   <meta name="theme-color" content="#15122E">
 <meta name="description" content="A practice for becoming. Notice where you are, choose what matters, practice a direction, and see what changes.">
-  <meta name="equilibrium-build" content="mw62jtta">
+  <meta name="equilibrium-build" content="mwkc6cg0">
 </head>
   <body>
     <noscript><p class="boot">Equilibrium needs JavaScript to run.</p></noscript>
@@ -59,10 +59,27 @@
       if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
         window.addEventListener('load', function () {
           var hadController = !!navigator.serviceWorker.controller;
-          navigator.serviceWorker.addEventListener('controllerchange', function () {
-            if (!hadController) { hadController = true; return; } // first install, not an update
+          // Build 1 leftovers (Nov 8): offer the refresh only when the worker that took over is a different build from
+          // the one running here. A refresh that already loaded the new build (the Grok bot, Oct 31: the banner stayed
+          // after a hard refresh) no longer shows it.
+          var meta = document.querySelector('meta[name="equilibrium-build"]');
+          var running = meta ? meta.getAttribute('content') : '';
+          var flag = function () {
             window.__companionUpdateReady = true;
             window.dispatchEvent(new Event('companion-update-ready'));
+          };
+          navigator.serviceWorker.addEventListener('controllerchange', function () {
+            if (!hadController) { hadController = true; return; } // first install, not an update
+            var c = navigator.serviceWorker.controller;
+            if (!c || !running || typeof MessageChannel === 'undefined') return flag();
+            var answered = false;
+            var ch = new MessageChannel();
+            ch.port1.onmessage = function (e) {
+              answered = true;
+              if (!e.data || e.data.build !== running) flag();
+            };
+            c.postMessage({ type: 'equilibrium-build' }, [ch.port2]);
+            setTimeout(function () { if (!answered) flag(); }, 3000); // a worker that can't answer: offer it, as before
           });
           navigator.serviceWorker.register('./sw.js').then(function (reg) {
             var check = function () { reg.update().catch(function () {}); };
@@ -72,6 +89,6 @@
         });
       }
     </script>
-  <script src="./app/static/js/web/index-6e9af5718c065716b3a795bfffcb7ba7.js" defer></script>
+  <script src="./app/static/js/web/index-a4b3867e4d5d51982a6846f405cd3963.js" defer></script>
 </body>
 </html>
