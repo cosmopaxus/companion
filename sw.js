@@ -12,8 +12,8 @@
 //   'companion-…'. Other apps on the same origin (the lab's 'companionlab-…') are never touched.
 // Lab (Oct 18, 2026): the restructure preview's caches are 'companionlab-…'. It clears only its own
 // older caches and never the live app's 'companion2-…' / 'companion-…' on the shared origin.
-const CACHE = 'companion2-mwn7gi0y';
-const PRECACHE = ["./","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./fonts/cinzel-700.woff2","./fonts/nunito-400.woff2","./fonts/nunito-600.woff2","./fonts/nunito-700.woff2","./fonts/jost-400.woff2","./favicon.ico","./icons/favicon.svg","./app/static/js/web/index-cf8aa5e10d94144fb04132e24f8ca09e.js","./art/familiars/familiar-air-sylph-head.jpg","./art/familiars/familiar-earth-gnome-head.jpg","./art/familiars/familiar-fire-salamander-head.jpg","./art/familiars/familiar-water-undine-head.jpg","./art/seals/seal-air.jpg","./art/seals/seal-earth.jpg","./art/seals/seal-fire.jpg","./art/seals/seal-water.jpg"];
+const CACHE = 'companion2-mwncr1da';
+const PRECACHE = ["./","./manifest.webmanifest","./icons/icon-192.png","./icons/icon-512.png","./icons/apple-touch-icon.png","./fonts/cinzel-700.woff2","./fonts/nunito-400.woff2","./fonts/nunito-600.woff2","./fonts/nunito-700.woff2","./fonts/jost-400.woff2","./favicon.ico","./icons/favicon.svg","./app/static/js/web/index-86506098047c40d5cca40f8c46d3792f.js","./art/familiars/familiar-air-sylph-head.jpg","./art/familiars/familiar-earth-gnome-head.jpg","./art/familiars/familiar-fire-salamander-head.jpg","./art/familiars/familiar-water-undine-head.jpg","./art/seals/seal-air.jpg","./art/seals/seal-earth.jpg","./art/seals/seal-fire.jpg","./art/seals/seal-water.jpg"];
 const OURS = (k) => k.startsWith('companion2-') || k.startsWith('companion-');
 const ownCache = () => caches.open(CACHE);
 
