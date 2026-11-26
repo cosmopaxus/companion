@@ -1,3 +1,11 @@
+# Release 5.0 · alpha · the What's new note for everything since 4.9.2 (Nov 26, 2026, ~10:50 AM PT)
+
+- Source: branch `claude/layer2-calendar` `40329e3` = `d3f9b60` + RELEASE 5.0 and Cosmo's seven locked lines (8:08 AM PT, `claude/equilibrium-release-5-0-note-locked.md`). Build `mwxvdbdn`. Same source as the lab `5923ea0` (build `mwxvckfj`).
+- Live-first (Cosmo, Nov 25, 3:01 PM): test app and live from the same commit, build chat 17.
+- Live database: no step. Data: none; storage `companion.v2`, schema 4 unchanged. No form changed: nobody signs up again.
+- Tests: unit 1,390 passed + 3 skipped; tsc clean; lint at baseline (2 errors, 12 warnings). Browser: e2e/updates 18/18 (lab build, phone + desktop); the live package served locally with all outside calls blocked: a 4.9.2 member sees the 5.0 note once, Night + Day, 390 + 1366, Settings reads "5.0 · alpha", no page errors.
+- Rollback: the files of `433ac62` (live mwx7fq2i), keep NOTES.md.
+
 # Release 4.8 · alpha · Simple first, birth month + year, room to write, why you're here (Nov 6, 2026, ~11:40 PM PT)
 
 - Source: branch `night-one` `3ddea95` = `release-4.7` `a639baf` + night one + `onboarding-why-heard` `06cc9d1` + the § 9 follow-up. Build `mw62jtta`. Same source as the lab `1b4bba2` (build `mw5xhnwp`).
