@@ -1,3 +1,10 @@
+# Release 5.0.1 · alpha · the calendar picks from chat 16 (Nov 26, 2026, ~11:35 AM PT)
+
+- Source: branch `claude/layer2-calendar` `c1783e3` = `40329e3` (5.0) + Cosmo's chat 16 picks: Settings "Dosing tools · On · your rhythm and sessions", the rhythm page's how-to line out, Today's Start-here tile named Calendar; Day mode session colors (#6C7FAF, #B5821F, #8F6410); the week bars match the Calendar (lines and diamond, no solid tints); "‹ Today" on the Calendar only when she came from Today's week bar; the check-in's dose cards fold back in 320 ms (reduce motion: a plain swap). What's new 5.0.1 (Cosmo: "B, but you make the 5.0.1 words"). Build `mwxxh9m8`. Same source as the lab (build `mwxxgl60`).
+- Live database: no step. Data: none (the "came from" flag lives in navigation memory only); storage `companion.v2`, schema 4 unchanged. No form changed.
+- Tests: unit 1,401 passed + 3 skipped; tsc clean; lint at baseline. Browser: the live package served locally, outside calls blocked, Night + Day, 390 + 1366: the week bar's lines and diamond, Day colors read from the page, "‹ Today" shows only from the week bar and stays through a day page, the first view still holds this week and three ahead (last week ends at 483 of 777 px at 390), the fold runs 52 → 0 px in ~330 ms, a 5.0 member sees 5.0.1 once. Full lab suite: 479 passed; every failure re-run green on a database-free build or alone (timing under load).
+- Rollback: the files of `2691bb2` (5.0, live mwxvdbdn), keep NOTES.md.
+
 # Release 5.0 · alpha · the What's new note for everything since 4.9.2 (Nov 26, 2026, ~10:50 AM PT)
 
 - Source: branch `claude/layer2-calendar` `40329e3` = `d3f9b60` + RELEASE 5.0 and Cosmo's seven locked lines (8:08 AM PT, `claude/equilibrium-release-5-0-note-locked.md`). Build `mwxvdbdn`. Same source as the lab `5923ea0` (build `mwxvckfj`).
