@@ -1,3 +1,13 @@
+# Build mwzfnsk9 · 5.0.1 · alpha · the pause's info card fix and a steadier goal test, from chat 23 (Nov 27, 2026, ~12:50 PM PT)
+
+- Source: branch `claude/layer2-calendar` `4372543` = `ebe9704` + one commit. Build `mwzfnsk9`. Same source as the lab build `mwzfn49v`. The version stays 5.0.1 and there is no new What's new line.
+- The info card on the plan sheet (Cosmo's Nov 26, 1:48 PM PT pick: the two pause lines show "when the switches show"): with a rhythm on but prep and integration days both at 0, no switch shows, so the card now holds the note alone. Before, it still showed "Pause my rhythm" and its two lines. Display only.
+- Cosmo's four small cards (Nov 26, 4:40 to 4:57 PM PT): all four kept as built: a switch hides when its days are 0; the rhythm door says "paused until" only while today is inside the pause; the card's title is the sheet's title; the two pause lines ship as they are while Quill reads them. The 98-moves edge stays as built (6:43 PM PT).
+- The goal test `e2e/p3c.spec.ts:46` (tests only, Cosmo's Nov 27, 11:50 AM PT pick): it now waits for the first step to land and its box to clear before typing the second. No app change.
+- Data: none. Storage `companion.v2`, schema 4 unchanged. Nothing new is saved, so the old-copy guard at `mwy7o118` lets this build through; no database step.
+- Tests: unit 1,444 passed + 3 skipped; tsc clean; lint at baseline (2 errors, 12 warnings). Browser: `e2e/sessionPause.spec.ts` (10, one new), `e2e/sliderDirection.spec.ts` (4) and `e2e/p3c.spec.ts:46` (2): 16/16 on this exact live package served locally with outside hosts blocked, phone 390 + desktop 1366, Night + Day. Full lab suite on a database-free build: 498 passed, 0 failed, 420 skipped.
+- Rollback: the files of `f737dcf` (5.0.1, live mwy7o118), keep NOTES.md.
+
 # Build mwy7o118 · 5.0.1 · alpha · Stress and Demands run low to high, and a pause kept past 100 moves, from chat 20 (Nov 26, 2026, ~4:10 PM PT)
 
 - Source: branch `claude/layer2-calendar` `844bb6d` = `2e05a03` (the session pause) + the sliders (`f9948f3`), the moves reader (`54c7fcf`) and the sliders' browser test (`844bb6d`; the branch head `ebe9704` changes that test only). Build `mwy7o118`. Same source as the lab build `mwy7nf2i`. The version stays 5.0.1 and there is no new What's new line (Cosmo did not ask for one).
