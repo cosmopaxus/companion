@@ -1,3 +1,17 @@
+# Build mwzynk8l · 5.0.1 · alpha · the rhythm list Cosmo decided on Nov 22, from chat 25 (Nov 27, 2026, ~9:25 PM PT)
+
+- Source: branch `claude/layer2-calendar` `fbf1131` = `4372543` + five commits. Build `mwzynk8l`. Same source as the lab build `mwzymqvr`. The version stays 5.0.1 and there is no new What's new line.
+- The rhythm list (Cosmo's Nov 22 picks; his go Nov 27, 6:18 PM PT): "Build your own" first; then each rhythm she has built, newest first, with three dots (Rename · Remove); then a small header "Templates" with Fadiman, Stamets and Evoke, name on top and days below. "Every other day", "Two days a week" and the unnamed three-on-two-off row are off the list; anyone already on one keeps her rhythm and days.
+- The Evoke row: shown to everyone, plain "Evoke", three on, two off for new picks, with its own info card. An intention is never required.
+- Remove (his Nov 22 picks, 7:33, 8:16 and 9:12 PM PT): it only takes a rhythm off her list. What she takes, her amount, her intention and her moves are no longer cleared, in the app or on load. The confirm says "Remove from your list?" and a stray tap outside does not close it. The rhythm she is on now has Rename only.
+- "What you take" on the rhythm form, and the name box on the two older 21+ log forms: the dose door's list (type or pick, type to narrow, "Keep my own words"). Saved as the same plain text. The Evoke row inside it is for Be Well members only.
+- Today's week bar: two days back, today, four ahead; today is always third. The Calendar's weeks are still Monday to Sunday.
+- The Progress card with no rhythm reads "No rhythm yet".
+- Data: storage `companion.v2`, schema 4 unchanged, nothing new is written by any screen. TWO things need the old-copy guard raised to this build (lab `mwzymqvr`, live `mwzynk8l`), on Cosmo's go, by the Equilibrium App bot: (1) Remove now keeps what she saved, and every copy before this one still clears it on load; (2) this build can read and merge the walkthrough's mark (`journey.guide.walk`, Cosmo's yes Nov 27, 8:02 PM PT), which no screen writes yet. Until the guard is raised, an older copy that loads a removed rhythm can clear its notes again.
+- Left as they were (not named in the build prompt; listed for the audit): "Choose a protocol", "Start this protocol", "Protocol ended", "These are common schedules people follow…".
+- Tests: unit 1,485 passed + 3 skipped; tsc clean; lint at baseline (2 errors, 12 warnings). Browser: `e2e/rhythmList25.spec.ts` 12/12 on this exact live package and 12/12 on the exact lab package, served locally with outside hosts blocked, phone 390 + desktop 1366, Night + Day; a made-up Be Well member sees the Evoke row (4/4 on each package).
+- Rollback: the files of `8133a91` (5.0.1, live mwzfnsk9), keep NOTES.md. Lab: the files of `8bd3c70` (mwzfn49v), keep README.md.
+
 # Build mwzfnsk9 · 5.0.1 · alpha · the pause's info card fix and a steadier goal test, from chat 23 (Nov 27, 2026, ~12:50 PM PT)
 
 - Source: branch `claude/layer2-calendar` `4372543` = `ebe9704` + one commit. Build `mwzfnsk9`. Same source as the lab build `mwzfn49v`. The version stays 5.0.1 and there is no new What's new line.
